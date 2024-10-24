@@ -41,13 +41,14 @@
 
     /* Adjusting calendar and widgets */
     .right-widgets {
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+      transform: translateX(0);
     }
-    .right-widgets.collapsed {
+    .right-widgets.hidden {
       opacity: 0;
+      transform: translateX(100%);
       pointer-events: none;
-      position: absolute;
-      right: -100%;
     }
 
     /* Ensuring the content is responsive */
@@ -349,7 +350,7 @@
     toggleSidebarBtn.addEventListener("click", () => {
       sidebar.classList.toggle("collapsed");
       mainContent.classList.toggle("collapsed");
-      rightWidgets.classList.toggle("collapsed");
+      rightWidgets.classList.toggle("hidden");
     });
   </script>
 </body>
