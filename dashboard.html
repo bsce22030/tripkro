@@ -1,0 +1,241 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travigo Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f4f8;
+    }
+    
+    /* Sidebar Collapsible */
+    .sidebar {
+      transition: width 0.3s ease;
+      overflow: hidden;
+    }
+    .sidebar.collapsed {
+      width: 60px;
+    }
+    .sidebar.collapsed .sidebar-item-text {
+      display: none;
+    }
+
+    /* Adjusting the main content when the sidebar is collapsed */
+    .main-content {
+      transition: margin-left 0.3s ease;
+      overflow: auto;
+    }
+    .main-content.collapsed {
+      margin-left: 60px;
+    }
+
+    /* Ensuring the content is responsive */
+    .content-card {
+      transition: width 0.3s ease;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+    .content-card img {
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-50">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar w-1/5 bg-white p-6 rounded-r-3xl shadow-lg">
+      <button
+        id="toggleSidebar"
+        class="text-gray-800 mb-6 bg-gray-200 p-2 rounded-full hover:bg-gray-300"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="flex items-center mb-10">
+        <img
+          src="https://storage.googleapis.com/a1aa/image/4O7e57RoQ7z7Oi7OHYJe5lIS4T5u5SwfzSUdK1M3cDpDl8TnA.jpg"
+          alt="Travigo Logo"
+          width="30"
+          height="30"
+          class="mr-2"
+        />
+        <span class="text-2xl font-bold text-gray-800 sidebar-item-text">Travigo</span>
+      </div>
+      <nav class="space-y-6">
+        <a href="#" class="flex items-center text-green-600 font-semibold">
+          <i class="fas fa-home mr-3"></i>
+          <span class="sidebar-item-text">Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center text-gray-600">
+          <i class="fas fa-ticket-alt mr-3"></i>
+          <span class="sidebar-item-text">My Tickets</span>
+        </a>
+        <a href="#" class="flex items-center text-gray-600">
+          <i class="fas fa-heart mr-3"></i>
+          <span class="sidebar-item-text">Favorite</span>
+        </a>
+        <a href="#" class="flex items-center text-gray-600 relative">
+          <i class="fas fa-envelope mr-3"></i>
+          <span class="sidebar-item-text">Message</span>
+          <span class="absolute right-0 top-0 bg-red-500 text-white text-xs rounded-full px-2">
+            4
+          </span>
+        </a>
+        <a href="#" class="flex items-center text-gray-600">
+          <i class="fas fa-exchange-alt mr-3"></i>
+          <span class="sidebar-item-text">Transaction</span>
+        </a>
+        <a href="#" class="flex items-center text-gray-600">
+          <i class="fas fa-cog mr-3"></i>
+          <span class="sidebar-item-text">Settings</span>
+        </a>
+      </nav>
+      <div class="mt-20 bg-green-100 p-4 rounded-xl relative">
+        <span class="text-green-600 font-semibold sidebar-item-text">50% Discount!</span>
+        <p class="text-gray-600 text-sm sidebar-item-text">
+          Get a discount on certain days and don't miss it.
+        </p>
+        <button class="absolute bottom-4 right-4 bg-orange-500 text-white p-2 rounded-full">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <a href="#" class="flex items-center text-gray-600 mt-10">
+        <i class="fas fa-sign-out-alt mr-3"></i>
+        <span class="sidebar-item-text">Log Out</span>
+      </a>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content w-4/5 p-10">
+      <div class="flex justify-between items-center mb-10">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-800">
+            Hello, Jeremy! <span class="wave">👋</span>
+          </h1>
+          <p class="text-gray-600">Welcome back and explore the world.</p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <input
+              class="bg-gray-100 p-3 rounded-full pl-10"
+              placeholder="Search Destination..."
+              type="text"
+            />
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+          </div>
+          <i class="fas fa-bell text-gray-400 text-xl"></i>
+          <div class="flex items-center">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/8fZsSfjzsZtS1kNKfSff1EY6Tof2FNZJfSQh6ehgCfqJ0k8TnA.jpg"
+              alt="User Avatar"
+              class="rounded-full mr-2"
+              width="40"
+              height="40"
+            />
+            <div>
+              <p class="text-gray-800 font-semibold">Jeremy Zuck</p>
+              <p class="text-gray-400 text-sm">Traveler Enthusiast</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6 mb-10">
+        <div class="bg-white p-6 rounded-xl shadow-lg content-card">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/boQH23tkUYbYIVLcv1whqXdWKFT8RKd5nze8aifWRwLfk8TnA.jpg"
+            alt="Mount Forel"
+            class="rounded-lg mb-4"
+          />
+          <h2 class="text-xl font-semibold text-gray-800">Mount Forel</h2>
+          <p class="text-gray-400">Greenland</p>
+          <p class="text-yellow-500">
+            <i class="fas fa-star"></i> 4.8
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg content-card">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/ofiekBKh7CgAgkNS049t4vCb6EBmjXRp3mdS2oeKcnHGl8TnA.jpg"
+            alt="Eco Camping"
+            class="rounded-lg mb-4"
+          />
+          <h2 class="text-xl font-semibold text-gray-800">Eco Camping</h2>
+          <p class="text-gray-400">Patagonia</p>
+          <p class="text-yellow-500">
+            <i class="fas fa-star"></i> 4.5
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg content-card">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/x8A1nTHP7Cq0Hph9A9kIBfN29Pm7E5HWjWMypPNDFQRLJfpTA.jpg"
+            alt="Mount Everest"
+            class="rounded-lg mb-4"
+          />
+          <h2 class="text-xl font-semibold text-gray-800">Mount Everest</h2>
+          <p class="text-gray-400">Nepal</p>
+          <p class="text-yellow-500">
+            <i class="fas fa-star"></i> 4.7
+          </p>
+        </div>
+      </div>
+
+      <!-- Best Destinations Section -->
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-semibold text-gray-800">Best Destination <span class="text-yellow-500">🌈</span></h2>
+        <button class="bg-gray-100 p-2 rounded-full">
+          <i class="fas fa-filter text-gray-400"></i>
+        </button>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-lg mb-10">
+        <p class="text-gray-400 mb-4">100 Destinations found</p>
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <img
+                src="https://storage.googleapis.com/a1aa/image/nDSacDBXqjLZO9i9Xo7TTWpIC57wnnxrcvfo1nkIbMMOJfpTA.jpg"
+                alt="Redwood Forest"
+                class="rounded-lg mr-4"
+                width="50"
+                height="50"
+              />
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">Redwood Forest</h3>
+                <p class="text-gray-400">California</p>
+              </div>
+            </div>
+            <p class="text-gray-800 font-semibold">$150/day</p>
+            <p class="text-yellow-500">
+              <i class="fas fa-star"></i> 4.9
+            </p>
+          </div>
+
+          <!-- More destination cards... -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleSidebarBtn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+
+    toggleSidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+      mainContent.classList.toggle("collapsed");
+    });
+  </script>
+</body>
+</html>
