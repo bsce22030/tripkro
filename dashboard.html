@@ -61,6 +61,40 @@
       width: 100%;
       object-fit: cover;
     }
+
+    /* My Schedule adjustments */
+    .schedule-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
+    .schedule-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+    .schedule-item-info h3 {
+      font-size: 16px;
+      margin: 0;
+    }
+    .schedule-item-info p {
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .schedule-item-participants {
+      color: #10b981;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .schedule-item-participants i {
+      margin-right: 4px;
+    }
   </style>
 </head>
 
@@ -288,52 +322,43 @@
       <div class="bg-white p-6 rounded-xl shadow-lg">
         <h2 class="text-xl font-semibold text-gray-800 mb-4">My Schedule</h2>
         <div class="space-y-4">
-          <div class="flex items-center">
+          <div class="schedule-item">
             <img
               src="https://storage.googleapis.com/a1aa/image/XxL4zVfrqkQNQKs0oeUXkyX4SHOR4YCxxbdxpH9cc9mdSeTnA.jpg"
               alt="Crooked Forest"
-              class="rounded-lg mr-4"
-              width="50"
-              height="50"
             />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Crooked Forest</h3>
-              <p class="text-gray-400 text-sm">16 June - 20 June</p>
-              <p class="text-green-600 text-sm">
+            <div class="schedule-item-info">
+              <h3>Crooked Forest</h3>
+              <p>16 June - 20 June</p>
+              <div class="schedule-item-participants">
                 <i class="fas fa-users"></i> +2
-              </p>
+              </div>
             </div>
           </div>
-          <div class="flex items-center">
+          <div class="schedule-item">
             <img
               src="https://storage.googleapis.com/a1aa/image/T5ewe2S5eqemNTIW3d5h5UcOFVHzsvedcQqYfw5RUAJupkf0JA.jpg"
               alt="Gioc Waterfall"
-              class="rounded-lg mr-4"
-              width="50"
-              height="50"
             />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Gioc Waterfall</h3>
-              <p class="text-gray-400 text-sm">22 June - 26 June</p>
-              <p class="text-green-600 text-sm">
+            <div class="schedule-item-info">
+              <h3>Gioc Waterfall</h3>
+              <p>22 June - 26 June</p>
+              <div class="schedule-item-participants">
                 <i class="fas fa-users"></i> +4
-              </p>
+              </div>
             </div>
           </div>
-          <div class="flex items-center">
+          <div class="schedule-item">
             <img
               src="https://storage.googleapis.com/a1aa/image/3eqE3riWWry8BCmVzt0crrn7ym8rpmBDVJEWAluwitVQJfpTA.jpg"
               alt="Tartaruga Camp"
-              class="rounded-lg mr-4"
-              width="50"
-              height="50"
             />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Tartaruga Camp</h3>
-              <p class="text-gray-400 text-sm">1 July - 7 July</p>
-              <p class="text-green-600 text-sm">
+            <div class="schedule-item-info">
+              <h3>Tartaruga Camp</h3>
+              <p>1 July - 7 July</p>
+              <div class="schedule-item-participants">
                 <i class="fas fa-users"></i> +6
-              </p>
+              </div>
             </div>
           </div>
         </div>
