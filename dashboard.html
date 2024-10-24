@@ -17,7 +17,7 @@
       font-family: 'Inter', sans-serif;
       background-color: #f0f4f8;
     }
-    
+
     /* Sidebar Collapsible */
     .sidebar {
       transition: width 0.3s ease;
@@ -37,6 +37,17 @@
     }
     .main-content.collapsed {
       margin-left: 60px;
+    }
+
+    /* Adjusting calendar and widgets */
+    .right-widgets {
+      transition: opacity 0.3s ease;
+    }
+    .right-widgets.collapsed {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      right: -100%;
     }
 
     /* Ensuring the content is responsive */
@@ -225,16 +236,120 @@
         </div>
       </div>
     </div>
+
+    <!-- Right Widgets Section (Calendar & My Schedule) -->
+    <div id="rightWidgets" class="right-widgets w-1/5 p-6">
+      <!-- Calendar Widget -->
+      <div class="bg-white p-6 rounded-xl shadow-lg mb-10">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">June 2021</h2>
+        <div class="grid grid-cols-7 gap-2 text-center text-gray-600">
+          <div>Mo</div>
+          <div>Tu</div>
+          <div>We</div>
+          <div>Th</div>
+          <div>Fr</div>
+          <div>Sa</div>
+          <div>Su</div>
+          <div class="text-gray-400">1</div>
+          <div class="text-gray-400">2</div>
+          <div class="text-gray-400">3</div>
+          <div class="text-gray-400">4</div>
+          <div class="text-gray-400">5</div>
+          <div class="text-gray-400">6</div>
+          <div class="text-gray-400">7</div>
+          <div class="text-gray-400">8</div>
+          <div class="text-gray-400">9</div>
+          <div class="text-gray-400">10</div>
+          <div class="text-gray-400">11</div>
+          <div class="text-gray-400">12</div>
+          <div class="text-gray-400">13</div>
+          <div class="text-gray-400">14</div>
+          <div class="text-gray-400">15</div>
+          <div class="bg-green-200 text-green-600 rounded-full">16</div>
+          <div class="bg-green-200 text-green-600 rounded-full">17</div>
+          <div class="text-gray-400">18</div>
+          <div class="text-gray-400">19</div>
+          <div class="bg-green-200 text-green-600 rounded-full">20</div>
+          <div class="text-gray-400">21</div>
+          <div class="text-gray-400">22</div>
+          <div class="text-gray-400">23</div>
+          <div class="text-gray-400">24</div>
+          <div class="text-gray-400">25</div>
+          <div class="text-gray-400">26</div>
+          <div class="text-gray-400">27</div>
+          <div class="text-gray-400">28</div>
+          <div class="text-gray-400">29</div>
+          <div class="text-gray-400">30</div>
+        </div>
+      </div>
+
+      <!-- Schedule Widget -->
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">My Schedule</h2>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/XxL4zVfrqkQNQKs0oeUXkyX4SHOR4YCxxbdxpH9cc9mdSeTnA.jpg"
+              alt="Crooked Forest"
+              class="rounded-lg mr-4"
+              width="50"
+              height="50"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Crooked Forest</h3>
+              <p class="text-gray-400 text-sm">16 June - 20 June</p>
+              <p class="text-green-600 text-sm">
+                <i class="fas fa-users"></i> +2
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/T5ewe2S5eqemNTIW3d5h5UcOFVHzsvedcQqYfw5RUAJupkf0JA.jpg"
+              alt="Gioc Waterfall"
+              class="rounded-lg mr-4"
+              width="50"
+              height="50"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Gioc Waterfall</h3>
+              <p class="text-gray-400 text-sm">22 June - 26 June</p>
+              <p class="text-green-600 text-sm">
+                <i class="fas fa-users"></i> +4
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/3eqE3riWWry8BCmVzt0crrn7ym8rpmBDVJEWAluwitVQJfpTA.jpg"
+              alt="Tartaruga Camp"
+              class="rounded-lg mr-4"
+              width="50"
+              height="50"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Tartaruga Camp</h3>
+              <p class="text-gray-400 text-sm">1 July - 7 July</p>
+              <p class="text-green-600 text-sm">
+                <i class="fas fa-users"></i> +6
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
     const toggleSidebarBtn = document.getElementById("toggleSidebar");
     const sidebar = document.getElementById("sidebar");
     const mainContent = document.getElementById("mainContent");
+    const rightWidgets = document.getElementById("rightWidgets");
 
     toggleSidebarBtn.addEventListener("click", () => {
       sidebar.classList.toggle("collapsed");
       mainContent.classList.toggle("collapsed");
+      rightWidgets.classList.toggle("collapsed");
     });
   </script>
 </body>
